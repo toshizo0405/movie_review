@@ -10,6 +10,7 @@ class FilmsController < ApplicationController
   end
 
   def index
+    @films = Film.all
   end
 
   def show
