@@ -6,7 +6,7 @@ class FilmsController < ApplicationController
   def create
     film = Film.new(film_params)
     film.save
-    redirect_to '/top'
+    redirect_to film_path(film.id)
   end
 
   def index
@@ -14,6 +14,7 @@ class FilmsController < ApplicationController
   end
 
   def show
+    @film = Film.find(params[:id])
   end
 
   def edit

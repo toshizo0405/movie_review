@@ -3,6 +3,8 @@
 <% @films.each do |film| %>
 
   <p>タイトル</p>
-  <span><%= film.title %></span>
+  <span>
+    <%= link_to film.title, film_path(film.id) %>
+  </span>
 
 <% end %>
