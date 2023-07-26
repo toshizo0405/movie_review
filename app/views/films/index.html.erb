@@ -6,5 +6,11 @@
   <span>
     <%= link_to film.title, film_path(film.id) %>
   </span>
+  <p>画像</p>
+  <% if film.image.attached? %>
+    <%= image_tag film.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag  'no_image2', size: "200x200"%>
+  <% end %>
 
 <% end %>

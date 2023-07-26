@@ -3,4 +3,12 @@
 
 <h2>レビュー</h2>
 <p><%= @film.impressions %></p>
+
+<h2>画像</h2>
+  <% if @film.image.attached? %>
+    <%= image_tag @film.image, size: "200x200" %>
+  <% else %>
+    <%= image_tag  'no_image2', size: "200x200"%>
+  <% end %>
+
 <%= link_to "編集", edit_film_path(@film.id) %>
