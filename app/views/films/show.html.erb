@@ -12,3 +12,4 @@
   <% end %>
 
 <%= link_to "編集", edit_film_path(@film.id) %>
+<%= link_to "削除", film_path(@film.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>

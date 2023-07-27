@@ -27,6 +27,12 @@ class FilmsController < ApplicationController
     redirect_to film_path(film.id)
   end
 
+  def destroy
+    film = Film.find(params[:id])
+    film.destroy
+    redirect_to '/films'
+  end
+
   private
 
   def film_params
