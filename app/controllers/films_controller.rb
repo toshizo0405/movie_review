@@ -4,9 +4,12 @@ class FilmsController < ApplicationController
   end
 
   def create
-    film = Film.new(film_params)
-    film.save
-    redirect_to film_path(film.id)
+    @film = Film.new(film_params)
+    if @film.save
+      redirect_to film_path(film.id)
+    else
+      render :new
+    end
   end
 
   def index

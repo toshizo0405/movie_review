@@ -1,4 +1,12 @@
-<h1>新規登録</h1>
+<h1>新規投稿</h1>
+<% if @film.errors.any? %>
+  <%= @film.errors.count %>件のエラーが発生しました。
+  <ul>
+    <% @film.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
 <%= form_with model: @film, url: '/films', method: :post do |f| %>
   <h4>作品名</h4>
