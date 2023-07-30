@@ -2,11 +2,13 @@
 
 <% @films.each do |film| %>
 
+
   <p>タイトル</p>
   <span>
     <%= link_to film.title, film_path(film.id) %>
   </span>
   <p>画像</p>
   <%= image_tag film.image, size: "300x300" %>
+
 
 <% end %>
