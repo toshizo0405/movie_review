@@ -1,3 +1,26 @@
+<div class="film-wrap">
+  <% @films.each do |film| %>
+    <div class="film-box">
+      <% if film.image.attached? %>
+        <%= image_tag film.image, size: "200x200" %>
+      <% else %>
+        <%= image_tag 'no_image2', size: "200x200" %>
+      <% end %>
+      <div class="film-comment">
+        <span class="film-impressions"><%= film.impressions %></span>
+        <span class="film-title"><%= link_to film.title, film_path(film.id %></span>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
 <h1>投稿一覧</h1>
 
 <% @films.each do |film| %>
