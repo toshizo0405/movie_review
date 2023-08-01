@@ -11,6 +11,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1 class="headline">All Films</h1>
+    </header>
+    <nav>
+      <ul class="nav-film">
+        <li class="nav-film-item">
+          <%= link_to "Top", top_path %>
+        </li>
+        <li class="nav-film-item">
+          <%= link_to "Films", films_path %>
+        </li>
+        <li class="nav-film-item">
+          <%= link_to "New Films", new_film_path %>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
